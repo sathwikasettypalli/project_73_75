@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project QR Code</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#74ebd5,#9face6);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    text-align:center;
+    width:320px;
+}
+
+h2{
+    color:#333;
+    margin-bottom:20px;
+}
+
+img{
+    width:220px;
+    height:220px;
+    border:5px solid #eee;
+    border-radius:15px;
+}
+
+p{
+    margin-top:15px;
+    font-size:14px;
+    color:#555;
+    word-break:break-all;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    background:#4CAF50;
+    color:white;
+    font-size:16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#45a049;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>My Project QR Code</h2>
+
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://project-73-75-1.onrender.com/" alt="QR Code">
+
+    <p>https://project-73-75-1.onrender.com/</p>
+
+    <button onclick="window.open('https://project-73-75-1.onrender.com/')">
+        Open Project
+    </button>
+</div>
+
+</body>
+</html>

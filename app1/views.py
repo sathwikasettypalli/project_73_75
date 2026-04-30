@@ -31,15 +31,37 @@ def Student_update(request, id):
     return render(request, 'student_update.html', {'form': form})
 
 
+# def delete_student(request, id):
+#     def_username = 'Sathwika'
+#     def_password = 'Sathwika123'
+
+#     std = Student.objects.get(id=id)
+#     del_form = student_delete_form()
+
+#     if request.method == 'POST':
+#         del_form = student_delete_form(request.POST)
+#         if del_form.is_valid():
+#             user = del_form.cleaned_data['username']
+#             password = del_form.cleaned_data['password']
+
+#             if user == def_username and password == def_password:
+#                 std.delete()
+#                 return redirect('home_page')
+#             else:
+#                 return HttpResponse('<h2> Invalid Password</h2>')
+
+#     return render(request, 'delete_std.html', {'del_form': del_form})
+
 def delete_student(request, id):
     def_username = 'Sathwika'
     def_password = 'Sathwika123'
 
-    std = Student.objects.get(id=id)
+    std = get_object_or_404(Student, id=id)
     del_form = student_delete_form()
 
     if request.method == 'POST':
         del_form = student_delete_form(request.POST)
+
         if del_form.is_valid():
             user = del_form.cleaned_data['username']
             password = del_form.cleaned_data['password']
@@ -48,6 +70,6 @@ def delete_student(request, id):
                 std.delete()
                 return redirect('home_page')
             else:
-                return HttpResponse('<h2> Invalid Password</h2>')
+                return HttpResponse("<h2>Invalid Username or Password</h2>")
 
     return render(request, 'delete_std.html', {'del_form': del_form})

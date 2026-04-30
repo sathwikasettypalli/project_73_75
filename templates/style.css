@@ -1,0 +1,55 @@
+/* Table Styling */
+
+table{
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th{
+    background: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+td{
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background: #f2f2f2;
+}
+
+tr:hover{
+    background: #dff0d8;
+    transition: 0.3s;
+}
+
+a{
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+}
+
+a[href*="update"]{
+    background: #2196F3;
+}
+
+a[href*="delete"]{
+    background: #f44336;
+}
+
+a:hover{
+    opacity: 0.8;
+}

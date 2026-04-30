@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Student_list,name='home_page'),
     path('update<int:id>', Student_update,name='std_update'),
-    path('s_del<int:id>', delete_student,name='std_delete'),
+    path('s_del/<int:id>/', delete_student, name='std_delete'),
 
 ]
