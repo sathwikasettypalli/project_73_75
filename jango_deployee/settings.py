@@ -88,7 +88,7 @@ DATABASES = {
 #     # Production (Render + Railway MySQL) 
 #     DATABASES = { 
 #         "default": { 
-#             "ENGINE": "django.db.backends.mysql", 
+#             "ENGINE": "django.db.backends.sqlite3", 
 #             "NAME": os.environ.get("MYSQLDATABASE"), 
 #             "USER": os.environ.get("MYSQLUSER"), 
 #             "PASSWORD": os.environ.get("MYSQLPASSWORD"), 
@@ -101,7 +101,7 @@ DATABASES = {
 #     # Local development 
 #     DATABASES = { 
 #         "default": { 
-#             "ENGINE": "django.db.backends.mysql", 
+#             "ENGINE": "django.db.backends.sqlite3", 
 #             "NAME": "deployee_73_72", 
 #             "USER": "root", 
 #             "PASSWORD": "Sathwika@9313", 
