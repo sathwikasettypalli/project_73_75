@@ -24,7 +24,7 @@ TEMPLATES_DIR=BASE_DIR/'templates'
 SECRET_KEY = 'django-insecure-^fz@i-spv1yqovr9i_@rdugnj!wfs(&(86a9%x#gp4ogy!dm=l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,39 +74,41 @@ WSGI_APPLICATION = 'jango_deployee.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 import os
-if os.environ.get("RENDER"): 
-    # Production (Render + Railway MySQL) 
-    DATABASES = { 
-        "default": { 
-            "ENGINE": "django.db.backends.mysql", 
-            "NAME": os.environ.get("MYSQLDATABASE"), 
-            "USER": os.environ.get("MYSQLUSER"), 
-            "PASSWORD": os.environ.get("MYSQLPASSWORD"), 
-            "HOST": os.environ.get("MYSQLHOST"), 
-            "PORT": os.environ.get("MYSQLPORT", "3306"), 
-        } 
-    } 
- 
-else: 
-    # Local development 
-    DATABASES = { 
-        "default": { 
-            "ENGINE": "django.db.backends.mysql", 
-            "NAME": "deployee_73_72", 
-            "USER": "root", 
-            "PASSWORD": "Sathwika@9313", 
-            "HOST": "localhost", 
-            "PORT": "3306", 
-        } 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+# import os
+# if os.environ.get("RENDER"): 
+#     # Production (Render + Railway MySQL) 
+#     DATABASES = { 
+#         "default": { 
+#             "ENGINE": "django.db.backends.mysql", 
+#             "NAME": os.environ.get("MYSQLDATABASE"), 
+#             "USER": os.environ.get("MYSQLUSER"), 
+#             "PASSWORD": os.environ.get("MYSQLPASSWORD"), 
+#             "HOST": os.environ.get("MYSQLHOST"), 
+#             "PORT": os.environ.get("MYSQLPORT", "3306"), 
+#         } 
+#     } 
+ 
+# else: 
+#     # Local development 
+#     DATABASES = { 
+#         "default": { 
+#             "ENGINE": "django.db.backends.mysql", 
+#             "NAME": "deployee_73_72", 
+#             "USER": "root", 
+#             "PASSWORD": "Sathwika@9313", 
+#             "HOST": "localhost", 
+#             "PORT": "3306", 
+#         } 
+#     }
 
 
 # Password validation
